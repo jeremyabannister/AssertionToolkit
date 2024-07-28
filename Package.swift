@@ -26,13 +26,13 @@ let package = Package(
         ///
         .package(
             url: "https://github.com/jeremyabannister/ErrorMessage-package",
-            "0.1.0" ..< "0.2.0"
+            "0.1.1" ..< "0.2.0"
         ),
         
         ///
         .package(
             url: "https://github.com/jeremyabannister/XCTestToolkit",
-            "0.2.4" ..< "0.3.0"
+            "0.2.5" ..< "0.3.0"
         ),
     ],
     targets: [
