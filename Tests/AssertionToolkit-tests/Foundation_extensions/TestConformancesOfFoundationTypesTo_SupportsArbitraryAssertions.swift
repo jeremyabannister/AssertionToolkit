@@ -27,6 +27,7 @@ final class TestConformancesOfFoundationTypesTo_SupportsArbitraryAssertions: XCT
         Result<Int, ErrorMessage>.proofOfConformanceTo_SupportsArbitraryAssertions()
         Set<String>.proofOfConformanceTo_SupportsArbitraryAssertions()
         String.proofOfConformanceTo_SupportsArbitraryAssertions()
+        TimeZone.proofOfConformanceTo_SupportsArbitraryAssertions()
         UInt.proofOfConformanceTo_SupportsArbitraryAssertions()
         URL.proofOfConformanceTo_SupportsArbitraryAssertions()
         URLComponents.proofOfConformanceTo_SupportsArbitraryAssertions()

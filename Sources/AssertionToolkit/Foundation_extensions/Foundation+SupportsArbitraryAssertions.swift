@@ -23,6 +23,7 @@ extension Optional: SupportsArbitraryAssertions { }
 extension Result: SupportsArbitraryAssertions { }
 extension Set: SupportsArbitraryAssertions { }
 extension String: SupportsArbitraryAssertions { }
+extension TimeZone: SupportsArbitraryAssertions { }
 extension UInt: SupportsArbitraryAssertions { }
 extension URL: SupportsArbitraryAssertions { }
 extension URLComponents: SupportsArbitraryAssertions { }
