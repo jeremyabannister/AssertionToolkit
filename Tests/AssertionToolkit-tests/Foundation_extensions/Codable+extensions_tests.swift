@@ -10,7 +10,7 @@ final class Codable_tests: XCTestCase {
     
     ///
     @MainActor
-    func test_assertRoundTripCoding () throws {
+    func test_assertRoundTripCoding() throws {
         try 7.assertRoundTripCoding()
         try "test".assertRoundTripCoding()
         try true.assertRoundTripCoding()
@@ -23,15 +23,16 @@ final class Codable_tests: XCTestCase {
 }
 
 ///
-private struct
-    SomeCodableType:
-        Codable,
-        Equatable,
-        SupportsArbitraryAssertions {
+private struct SomeCodableType:
+    Codable,
+    Equatable,
+    SupportsArbitraryAssertions {
     
     var foo: Int = 7
     var bar: String = "wrf7🔥é"
     var abc: [SomeCodableType] = Bool.random() ? [] : [.init()]
+    
+    init() { }
 }
 
 ///
@@ -45,10 +46,10 @@ private struct
     var bar: String = "wrf7🔥é"
     var abc: [SomeCodableType] = Bool.random() ? [] : [.init()]
     
-    init () {}
+    init() {}
     
     ///
-    init (from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.foo = 0
         self.bar = try container.decode(String.self, forKey: .bar)
@@ -61,7 +62,7 @@ private struct
         case abc
     }
     
-    func encode (to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.foo, forKey: .foo)
         try container.encode(self.bar, forKey: .bar)

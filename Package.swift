@@ -1,56 +1,39 @@
-// swift-tools-version: 5.10
+// swift-tools-version:6.0
 
-///
 import PackageDescription
 
-
-///
 let package = Package(
     name: "AssertionToolkit",
     products: [
-        
-        ///
         .library(
             name: "AssertionToolkit",
             targets: ["AssertionToolkit"]
         ),
-        
-        ///
         .library(
             name: "AssertionTestToolkit",
             targets: ["AssertionTestToolkit"]
         ),
     ],
     dependencies: [
-        
-        ///
         .package(
             url: "https://github.com/jeremyabannister/ErrorMessage-package",
-            "0.1.1" ..< "0.2.0"
+            .upToNextMinor(from: "0.1.2")
         ),
-        
-        ///
         .package(
             url: "https://github.com/jeremyabannister/XCTestToolkit",
-            "0.2.5" ..< "0.3.0"
+            .upToNextMinor(from: "0.2.6")
         ),
     ],
     targets: [
-        
-        ///
         .target(
             name: "AssertionToolkit",
             dependencies: [
-                
-                ///
                 .product(
                     name: "ErrorMessage-module",
                     package: "ErrorMessage-package"
                 ),
             ]
         ),
-        
-        ///
         .target(
             name: "AssertionTestToolkit",
             dependencies: [
@@ -58,8 +41,6 @@ let package = Package(
                 "XCTestToolkit",
             ]
         ),
-        
-        ///
         .testTarget(
             name: "AssertionToolkit-tests",
             dependencies: [
@@ -67,8 +48,6 @@ let package = Package(
                 "AssertionTestToolkit",
             ]
         ),
-        
-        ///
         .testTarget(
             name: "AssertionTestToolkit-tests",
             dependencies: [
